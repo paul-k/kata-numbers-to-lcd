@@ -11,8 +11,12 @@ public class Main {
             return;
         }
 
-        LcdDisplay lcd = new LcdDisplay();
-        String result = lcd.FromValue(args[0]);
+        String value = args[0];
+        Integer height = args.length > 1 ? Integer.parseInt(args[1]) : 1;
+        Integer width = args.length > 2 ? Integer.parseInt(args[2]) : 1;
+
+        LcdDisplay lcd = new LcdDisplay(width, height);
+        String result = lcd.FromValue(value);
         System.out.println(result);
     }
 }
